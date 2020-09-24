@@ -13,5 +13,35 @@
     </ion-toolbar>
   </ion-header>
 
-  <app-explore-container name="Tab 2 page"></app-explore-container>
+  <ngx-gauge [type]="gaugeType"
+             [value]="gaugeValue"
+             [label]="gaugeLabel"
+             [thresholds]="thresholdConfig"
+             [thick]="thick"
+             [cap]="cap"
+             [size]="size"
+             [append]="gaugeAppendText">
+  </ngx-gauge>
+
+  <ion-row>
+    <ion-col size="12" id="piechartparent">
+      <ngx-charts-bar-vertical-2d
+              [view]=""
+              [scheme]="colorScheme"
+              [results]="multi"
+              [gradient]="gradient"
+              [xAxis]="showXAxis"
+              [yAxis]="showYAxis"
+              [legend]="false"
+              [showXAxisLabel]="showXAxisLabel"
+              [showYAxisLabel]="showYAxisLabel"
+              [xAxisLabel]="xAxisLabel"
+              [yAxisLabel]="yAxisLabel"
+              [legendTitle]="legendTitle"
+              (select)="onSelect($event)"
+              (activate)="onActivate($event)"
+              (deactivate)="onDeactivate($event)">
+      </ngx-charts-bar-vertical-2d>
+    </ion-col>
+  </ion-row>
 </ion-content>

@@ -24,3 +24,19 @@
 @import "~@ionic/angular/css/text-alignment.css";
 @import "~@ionic/angular/css/text-transformation.css";
 @import "~@ionic/angular/css/flex-utils.css";
+
+.pie-grid .percent-label {
+  font-size: 22px !important;
+  font-weight: 400;
+}
+
+.ngx-charts .label {
+  font-size: 18px !important;
+  font-weight: 400;
+}
+
+.pie-grid .arc1 {
+  opacity: .2 !important;
+}
+
+#piechartparent { display: grid !important; }

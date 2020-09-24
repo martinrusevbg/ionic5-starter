@@ -13,5 +13,27 @@
     </ion-toolbar>
   </ion-header>
 
-  <app-explore-container name="Tab 3 page"></app-explore-container>
+
+  <ion-list>
+    <ion-item *ngFor="let item of items" class="dynamic-item" [style]="getDynamicColor(item.color)" (click)="setTheme(item.class)">
+      <ion-label>{{ item.text }}</ion-label>
+    </ion-item>
+  </ion-list>
+
+  <ion-item>
+    <ion-select [(ngModel)]="language" [value]="language" (ionChange)="changeLanguage()">
+      <ion-select-option value="en">English</ion-select-option>
+      <ion-select-option value="es">Spanish</ion-select-option>
+      <ion-select-option value="fr">French</ion-select-option>
+    </ion-select>
+  </ion-item>
+
+  <ion-card class="ion-padding">
+    <ion-card-header>
+      Simple with directive
+    </ion-card-header>
+    <ion-card-content>
+      <h1>{{ 'TITLE' | translate }}</h1>
+    </ion-card-content>
+  </ion-card>
 </ion-content>
